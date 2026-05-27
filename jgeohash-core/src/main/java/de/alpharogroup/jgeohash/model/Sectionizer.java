@@ -16,7 +16,6 @@
 package de.alpharogroup.jgeohash.model;
 
 import java.util.Comparator;
-
 import de.alpharogroup.merge.api.GenericSummarizer;
 import lombok.Builder;
 import lombok.Getter;
@@ -28,32 +27,26 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class Sectionizer extends GenericSummarizer<Section>
-{
+public class Sectionizer extends GenericSummarizer<Section> {
 
-	/**
-	 * Instantiates a new {@link Sectionizer} object
-	 */
-	public Sectionizer()
-	{
-		super();
-	}
+    /**
+     * Instantiates a new {@link Sectionizer} object
+     */
+    public Sectionizer() {
+        super();
+    }
 
-	/**
-	 * Instantiates a new {@link Sectionizer} object with the given max iteration
-	 *
-	 * @param maxIteration the max iteration
-	 */
-	public Sectionizer(int maxIteration)
-	{
-		super(maxIteration);
-	}
+    /**
+     * Instantiates a new {@link Sectionizer} object with the given max iteration
+     *
+     * @param maxIteration the max iteration
+     */
+    public Sectionizer(int maxIteration) {
+        super(maxIteration);
+    }
 
-	@Override
-	protected Comparator<Section> newComparator()
-	{
-		return new SectionComparator();
-	}
-
-
+    @Override
+    protected Comparator<Section> newComparator() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }

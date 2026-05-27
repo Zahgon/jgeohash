@@ -71,3 +71,8 @@
 ################
 hs_err_pid*
 /.attach_pid*
+
+.aider*
+logs/
+.commit0_scripts/
+.github/workflows/

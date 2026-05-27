@@ -19,11 +19,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
 import org.apache.commons.io.IOUtils;
-
 import com.maxmind.geoip.LookupService;
-
 import de.alpharogroup.lang.ClassExtensions;
 
 /**
@@ -33,68 +30,57 @@ import de.alpharogroup.lang.ClassExtensions;
  * There have to be the file with the file name 'GeoLiteCity.dat' in the classpath for appropriate
  * work of the {@link LookupService}.
  */
-public final class LookupServiceSingleton
-{
-	/** The single instance of the {@link LookupService}. */
-	private static volatile LookupService instance;
+public final class LookupServiceSingleton {
 
-	/** The constant for the file name prefix. */
-	private static final String PREFIX = "GeoLiteCity";
+    /**
+     * The single instance of the {@link LookupService}.
+     */
+    private static volatile LookupService instance;
 
-	/** The Constant for the file name suffix. */
-	private static final String SUFFIX = ".dat";
+    /**
+     * The constant for the file name prefix.
+     */
+    private static final String PREFIX = "GeoLiteCity";
 
-	/**
-	 * Gets the single instance of the {@link LookupService}
-	 *
-	 * @return the single instance of the {@link LookupService}
-	 *
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
-	 */
-	public static LookupService getInstance() throws IOException
-	{
-		if (instance == null)
-		{
-			synchronized (LookupServiceSingleton.class)
-			{ // double check...
-				if (instance == null)
-				{
-					File fileLocation = null;
-					final InputStream is = ClassExtensions.getResourceAsStream(PREFIX + SUFFIX);
-					fileLocation = inputStreamToFile(is);
-					instance = new LookupService(fileLocation, LookupService.GEOIP_MEMORY_CACHE);
-				}
-			}
-		}
-		return instance;
-	}
+    /**
+     * The Constant for the file name suffix.
+     */
+    private static final String SUFFIX = ".dat";
 
-	/**
-	 * Creates a temporary file from the given {@link InputStream} object. Note: the created
-	 * temporary file from the given {@link InputStream} object will be deleted on finish of the
-	 * application.
-	 *
-	 * @param inputStream
-	 *            the {@link InputStream} object
-	 * @return the temporary file from the given {@link InputStream} object
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
-	 */
-	private static File inputStreamToFile(final InputStream inputStream) throws IOException
-	{
-		final File tempFile = File.createTempFile(PREFIX, SUFFIX);
-		tempFile.deleteOnExit();
-		final FileOutputStream out = new FileOutputStream(tempFile);
-		IOUtils.copy(inputStream, out);
-		return tempFile;
-	}
+    /**
+     * Gets the single instance of the {@link LookupService}
+     *
+     * @return the single instance of the {@link LookupService}
+     *
+     * @throws IOException
+     *             Signals that an I/O exception has occurred.
+     */
+    public static LookupService getInstance() throws IOException {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 
-	/**
-	 * Private constructor.
-	 */
-	private LookupServiceSingleton()
-	{
-	}
+    /**
+     * Creates a temporary file from the given {@link InputStream} object. Note: the created
+     * temporary file from the given {@link InputStream} object will be deleted on finish of the
+     * application.
+     *
+     * @param inputStream
+     *            the {@link InputStream} object
+     * @return the temporary file from the given {@link InputStream} object
+     * @throws IOException
+     *             Signals that an I/O exception has occurred.
+     */
+    private static File inputStreamToFile(final InputStream inputStream) throws IOException {
+        final File tempFile = File.createTempFile(PREFIX, SUFFIX);
+        tempFile.deleteOnExit();
+        final FileOutputStream out = new FileOutputStream(tempFile);
+        IOUtils.copy(inputStream, out);
+        return tempFile;
+    }
 
+    /**
+     * Private constructor.
+     */
+    private LookupServiceSingleton() {
+    }
 }

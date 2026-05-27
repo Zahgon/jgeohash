@@ -16,7 +16,6 @@
 package de.alpharogroup.jgeohash;
 
 import java.math.BigDecimal;
-
 import de.alpharogroup.jgeohash.api.Position;
 import lombok.EqualsAndHashCode;
 
@@ -24,143 +23,126 @@ import lombok.EqualsAndHashCode;
  * The class {@link GeoHashPoint}.
  */
 @EqualsAndHashCode(callSuper = true)
-public class GeoHashPoint extends Point
-{
+public class GeoHashPoint extends Point {
 
-	/** The Constant GEOHASH_KEY. */
-	public static final String GEOHASH_KEY = "GEOHASH_KEY";
+    /**
+     * The Constant GEOHASH_KEY.
+     */
+    public static final String GEOHASH_KEY = "GEOHASH_KEY";
 
-	/**
-	 * The serialVersionUID.
-	 */
-	private static final long serialVersionUID = -3580536765079661097L;
+    /**
+     * The serialVersionUID.
+     */
+    private static final long serialVersionUID = -3580536765079661097L;
 
-	/**
-	 * Instantiates a new {@link GeoHashPoint}.
-	 *
-	 * @param latitude
-	 *            the latitude
-	 * @param longitude
-	 *            the longitude
-	 */
-	public GeoHashPoint(final double latitude, final double longitude)
-	{
-		super(latitude, longitude);
-	}
+    /**
+     * Instantiates a new {@link GeoHashPoint}.
+     *
+     * @param latitude
+     *            the latitude
+     * @param longitude
+     *            the longitude
+     */
+    public GeoHashPoint(final double latitude, final double longitude) {
+        super(latitude, longitude);
+    }
 
-	/**
-	 * Instantiates a new {@link GeoHashPoint}.
-	 *
-	 * @param latitude
-	 *            the latitude
-	 * @param longitude
-	 *            the longitude
-	 */
-	public GeoHashPoint(final Double latitude, final Double longitude)
-	{
-		super(latitude, longitude);
-	}
+    /**
+     * Instantiates a new {@link GeoHashPoint}.
+     *
+     * @param latitude
+     *            the latitude
+     * @param longitude
+     *            the longitude
+     */
+    public GeoHashPoint(final Double latitude, final Double longitude) {
+        super(latitude, longitude);
+    }
 
-	/**
-	 * Instantiates a new {@link GeoHashPoint}.
-	 *
-	 * @param latitude
-	 *            the latitude
-	 * @param longitude
-	 *            the longitude
-	 */
-	public GeoHashPoint(final float latitude, final float longitude)
-	{
-		this(Float.toString(latitude), Float.toString(longitude));
-	}
+    /**
+     * Instantiates a new {@link GeoHashPoint}.
+     *
+     * @param latitude
+     *            the latitude
+     * @param longitude
+     *            the longitude
+     */
+    public GeoHashPoint(final float latitude, final float longitude) {
+        this(Float.toString(latitude), Float.toString(longitude));
+    }
 
-	/**
-	 * Instantiates a new {@link GeoHashPoint}.
-	 *
-	 * @param position
-	 *            the position
-	 */
-	public GeoHashPoint(final Position position)
-	{
-		this(position.getLatitude(), position.getLongitude());
-	}
+    /**
+     * Instantiates a new {@link GeoHashPoint}.
+     *
+     * @param position
+     *            the position
+     */
+    public GeoHashPoint(final Position position) {
+        this(position.getLatitude(), position.getLongitude());
+    }
 
-	/**
-	 * Instantiates a new {@link GeoHashPoint}.
-	 *
-	 * @param geohash
-	 *            the Geohash code.
-	 */
-	public GeoHashPoint(final String geohash)
-	{
-		super(GeoHashExtensions.decode(geohash)[0], GeoHashExtensions.decode(geohash)[1]);
-	}
+    /**
+     * Instantiates a new {@link GeoHashPoint}.
+     *
+     * @param geohash
+     *            the Geohash code.
+     */
+    public GeoHashPoint(final String geohash) {
+        super(GeoHashExtensions.decode(geohash)[0], GeoHashExtensions.decode(geohash)[1]);
+    }
 
-	/**
-	 * Instantiates a new {@link GeoHashPoint}.
-	 *
-	 * @param lat
-	 *            the latitude as String object.
-	 * @param lng
-	 *            the longitude as String object.
-	 */
-	public GeoHashPoint(final String lat, final String lng)
-	{
-		super(Double.parseDouble(lat), Double.parseDouble(lng));
-	}
+    /**
+     * Instantiates a new {@link GeoHashPoint}.
+     *
+     * @param lat
+     *            the latitude as String object.
+     * @param lng
+     *            the longitude as String object.
+     */
+    public GeoHashPoint(final String lat, final String lng) {
+        super(Double.parseDouble(lat), Double.parseDouble(lng));
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public Object clone()
-	{
-		return new GeoHashPoint(getLatitude(), getLongitude());
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Object clone() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 
-	/**
-	 * Gets the geohash.
-	 *
-	 * @return the geohash
-	 */
-	public String getGeohash()
-	{
-		return GeoHashExtensions.encode(getLatitude(), getLongitude());
-	}
+    /**
+     * Gets the geohash.
+     *
+     * @return the geohash
+     */
+    public String getGeohash() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 
-	/**
-	 * Gets the latitude as BigDecimal object.
-	 *
-	 * @return the latitude as BigDecimal object.
-	 */
-	public BigDecimal getLat()
-	{
-		return BigDecimal.valueOf(getLatitude());
-	}
+    /**
+     * Gets the latitude as BigDecimal object.
+     *
+     * @return the latitude as BigDecimal object.
+     */
+    public BigDecimal getLat() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 
-	/**
-	 * Gets the longitude as BigDecimal object.
-	 *
-	 * @return the longitude as BigDecimal object.
-	 */
-	public BigDecimal getLng()
-	{
-		return BigDecimal.valueOf(getLongitude());
-	}
+    /**
+     * Gets the longitude as BigDecimal object.
+     *
+     * @return the longitude as BigDecimal object.
+     */
+    public BigDecimal getLng() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public String toString()
-	{
-		final StringBuilder buffer = new StringBuilder();
-		buffer.append("[GeoHashPoint:");
-		buffer.append(super.toString());
-		buffer.append("   Geohash : ");
-		buffer.append(getGeohash());
-		buffer.append("]");
-		return buffer.toString();
-	}
-
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String toString() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }

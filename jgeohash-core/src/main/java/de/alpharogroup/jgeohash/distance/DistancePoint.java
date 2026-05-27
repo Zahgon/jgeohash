@@ -29,50 +29,49 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 @Builder(toBuilder = true)
-public class DistancePoint implements Comparable<DistancePoint>
-{
+public class DistancePoint implements Comparable<DistancePoint> {
 
-	/** The distance. */
-	private final Double distance;
+    /**
+     * The distance.
+     */
+    private final Double distance;
 
-	/** The position point. */
-	private final Position point;
+    /**
+     * The position point.
+     */
+    private final Position point;
 
-	/**
-	 * Instantiates a new {@link DistancePoint} object from the given arguments
-	 *
-	 * @param distance
-	 *            the distance
-	 * @param point
-	 *            the position point
-	 */
-	public DistancePoint(final Double distance, final Position point)
-	{
-		this.distance = distance;
-		this.point = point;
-	}
+    /**
+     * Instantiates a new {@link DistancePoint} object from the given arguments
+     *
+     * @param distance
+     *            the distance
+     * @param point
+     *            the position point
+     */
+    public DistancePoint(final Double distance, final Position point) {
+        this.distance = distance;
+        this.point = point;
+    }
 
-	/**
-	 * Instantiates a new {@link DistancePoint} object from the given arguments
-	 *
-	 * @param point
-	 *            the position point
-	 * @param distance
-	 *            the distance
-	 */
-	public DistancePoint(final Position point, final Double distance)
-	{
-		this.point = point;
-		this.distance = distance;
-	}
+    /**
+     * Instantiates a new {@link DistancePoint} object from the given arguments
+     *
+     * @param point
+     *            the position point
+     * @param distance
+     *            the distance
+     */
+    public DistancePoint(final Position point, final Double distance) {
+        this.point = point;
+        this.distance = distance;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public int compareTo(final DistancePoint o)
-	{
-		return distance.compareTo(o.distance);
-	}
-
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public int compareTo(final DistancePoint o) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }

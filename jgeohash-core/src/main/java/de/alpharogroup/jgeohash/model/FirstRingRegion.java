@@ -16,7 +16,6 @@
 package de.alpharogroup.jgeohash.model;
 
 import java.io.Serializable;
-
 import de.alpharogroup.jgeohash.Adjacent;
 import de.alpharogroup.jgeohash.GeoHashExtensions;
 import lombok.EqualsAndHashCode;
@@ -29,67 +28,81 @@ import lombok.ToString;
 @Getter
 @EqualsAndHashCode
 @ToString
-public class FirstRingRegion implements Serializable, Cloneable
-{
+public class FirstRingRegion implements Serializable, Cloneable {
 
-	/**
-	 * The constant serialVersionUID.
-	 */
-	private static final long serialVersionUID = -1L;
+    /**
+     * The constant serialVersionUID.
+     */
+    private static final long serialVersionUID = -1L;
 
-	/** The center. */
-	private final String center;
+    /**
+     * The center.
+     */
+    private final String center;
 
-	/** The east. */
-	private final String east;
+    /**
+     * The east.
+     */
+    private final String east;
 
-	/** The north. */
-	private final String north;
+    /**
+     * The north.
+     */
+    private final String north;
 
-	/** The north east. */
-	private final String northEast;
+    /**
+     * The north east.
+     */
+    private final String northEast;
 
-	/** The north west. */
-	private final String northWest;
+    /**
+     * The north west.
+     */
+    private final String northWest;
 
-	/** The south. */
-	private final String south;
+    /**
+     * The south.
+     */
+    private final String south;
 
-	/** The south east. */
-	private final String southEast;
+    /**
+     * The south east.
+     */
+    private final String southEast;
 
-	/** The south west. */
-	private final String southWest;
+    /**
+     * The south west.
+     */
+    private final String southWest;
 
-	/** The west. */
-	private final String west;
+    /**
+     * The west.
+     */
+    private final String west;
 
-	/**
-	 * Instantiates a new FirstRingRegion object from the given geohash value.
-	 *
-	 * @param geohash
-	 *            the center
-	 */
-	public FirstRingRegion(final String geohash)
-	{
-		this.center = geohash;
-		this.east = GeoHashExtensions.getAdjacent(geohash, Adjacent.RIGHT);
-		this.west = GeoHashExtensions.getAdjacent(geohash, Adjacent.LEFT);
-		this.north = GeoHashExtensions.getAdjacent(geohash, Adjacent.TOP);
-		this.south = GeoHashExtensions.getAdjacent(geohash, Adjacent.BOTTOM);
-		this.southEast = GeoHashExtensions.getAdjacent(this.south, Adjacent.RIGHT);
-		this.northEast = GeoHashExtensions.getAdjacent(this.north, Adjacent.RIGHT);
-		this.northWest = GeoHashExtensions.getAdjacent(this.north, Adjacent.LEFT);
-		this.southWest = GeoHashExtensions.getAdjacent(this.south, Adjacent.LEFT);
-	}
+    /**
+     * Instantiates a new FirstRingRegion object from the given geohash value.
+     *
+     * @param geohash
+     *            the center
+     */
+    public FirstRingRegion(final String geohash) {
+        this.center = geohash;
+        this.east = GeoHashExtensions.getAdjacent(geohash, Adjacent.RIGHT);
+        this.west = GeoHashExtensions.getAdjacent(geohash, Adjacent.LEFT);
+        this.north = GeoHashExtensions.getAdjacent(geohash, Adjacent.TOP);
+        this.south = GeoHashExtensions.getAdjacent(geohash, Adjacent.BOTTOM);
+        this.southEast = GeoHashExtensions.getAdjacent(this.south, Adjacent.RIGHT);
+        this.northEast = GeoHashExtensions.getAdjacent(this.north, Adjacent.RIGHT);
+        this.northWest = GeoHashExtensions.getAdjacent(this.north, Adjacent.LEFT);
+        this.southWest = GeoHashExtensions.getAdjacent(this.south, Adjacent.LEFT);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public Object clone()
-	{
-		return new FirstRingRegion(this.center);
-	}
-
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Object clone() {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }
